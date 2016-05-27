@@ -1,8 +1,8 @@
-<h1 id="page_title">Say Hello!</h1>
+ <h1 id="page_title">Say Hello!</h1>
 
 <div class="skinny_wrapper wrapper_padding">
 
-  <%= form_for @contact do |f| %>
+  <%= form_for @contact, html: { multipart: true } do |f| %>
 
       <%= f.label :name %><br>
       <%= f.text_field :name, required: true %>
@@ -13,6 +13,12 @@
 
       <%= f.label :email %><br>
       <%= f.text_field :email, required: true %>
+
+      <br>
+      <br>
+
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone, required: true %>
 
       <br>
       <br>
