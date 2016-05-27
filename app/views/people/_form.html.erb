@@ -1,4 +1,4 @@
-<%= form_for @person do |f| %>
+<%= form_for @person, html: { multipart: true } do |f| %>
     <% if @person.errors.any? %>
         <h2><%= pluralize(@person.errors.count, "error") %> prevented this person details from saving:</h2>
         <ul>
@@ -84,6 +84,13 @@
 
     <%= f.label :updates %><br>
     <%= f.text_area :updates %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
 
     <br>
     <br>

@@ -1,3 +1,5 @@
+<div class="wrapper wrapper_padding clearfix" >
+
 <div id="post_show_content" class="skinny_wrapper wrapper_padding">
   <header>
     <p class="date">Missing Date : <%= @person.missing_date %></p>
@@ -5,8 +7,10 @@
     <hr>
   </header>
 
+  <div class="col-1 about homepage_content person_image">
 
-
+    <%= image_tag @person.image.url(:medium) %>
+</div>
   <div class="table large_wrapper">
 
     <table>
@@ -59,7 +63,6 @@
 
   </div>
 
-  <hr>
 
   <%= link_to "Edit", edit_person_path(@person) %>
   <%= link_to "Delete", person_path(@person), method: :delete, data: {confirm: "Are you sure, You want to delete this person details?"} %>
@@ -77,6 +80,7 @@
   <%= render 'disqus' %>
 
 </div>
+  </div>
 
 
 

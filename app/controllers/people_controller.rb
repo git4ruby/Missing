@@ -44,7 +44,7 @@ class PeopleController < ApplicationController
   private
 
   def person_params
-    params.require(:person).permit(:first_name, :last_name, :age, :nationality, :contact, :height, :gender, :description, :missing_date, :missing_location, :updates, :slug)
+    params.require(:person).permit(:first_name, :last_name, :age, :nationality, :contact, :height, :gender, :description, :missing_date, :missing_location, :updates, :image, :slug)
   end
 
   def find_person
