@@ -24,6 +24,15 @@ body{
   max-width: 760px;
   margin: 0 auto;
 }
+
+.large_wrapper {
+  text-align: left;
+  width: auto;
+  padding: 0 2.5%;
+  max-width: 760px;
+  margin: 0 auto;
+  margin-left: 50%;
+}
 .wrapper_padding {
   padding: 4rem 0;
 }
@@ -176,4 +185,4 @@ input[type="submit"], .button {
 
 
 @import "welcome";
-@import "post_project";
+@import "post_projects";

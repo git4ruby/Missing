@@ -1,14 +1,75 @@
-<%= @person.first_name %><br>
-<%= @person.last_name %><br>
-<%= @person.age %><br>
-<%= @person.nationality %><br>
-<%= @person.gender%><br>
-<%= @person.contact %><br>
-<%= @person.height %><br>
-<%= @person.description %><br>
-<%= @person.missing_date %><br>
-<%= @person.missing_location %><br>
-<%= @person.updates %><br><br>
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+  <header>
+    <p class="date">Missing Date : <%= @person.missing_date %></p>
+    <h1><%= @person.first_name %> <%= @person.last_name %><br></h1>
+    <hr>
+  </header>
 
-<%= link_to "Edit", edit_person_path(@person) %>
-<%= link_to "Delete", person_path(@person), method: :delete, data: { confirm: "Are you sure you want to delete this person details?"} %>
+
+
+  <div class="table large_wrapper">
+
+    <table>
+      <tr>
+        <th>Firstname</th>
+        <td><%= @person.first_name %></td></tr>
+      <tr>
+        <th>Lastname </th>
+        <td><%= @person.last_name %></td>
+      </tr>
+      <tr>
+        <th>Age </th>
+        <td><%= @person.age %></td></tr>
+      <tr>
+      <tr>
+        <th>Nationality</th>
+        <td><%= @person.nationality %></td></tr>
+      <tr>
+      <tr>
+        <th>Gender</th>
+        <td><%= @person.gender %></td></tr>
+      <tr>
+      <tr>
+        <th>Contact</th>
+        <td><%= @person.contact %></td></tr>
+      <tr>
+      <tr>
+        <th>Height</th>
+        <td><%= @person.height %></td></tr>
+      <tr>
+      <tr>
+        <th>Description</th>
+        <td><%= @person.description %></td></tr>
+      <tr>
+      <tr>
+        <th>Missing Date</th>
+        <td><%= @person.missing_date %></td></tr>
+      <tr>
+      <tr>
+        <th>Missing Location</th>
+        <td><%= @person.missing_location %></td></tr>
+      <tr>
+      <tr>
+        <th>Latest Updates</th>
+        <td><%= @person.updates %></td></tr>
+      <tr>
+
+
+    </table>
+
+  </div>
+
+  <hr>
+  <div id="share_box">
+    <p>Share <%= @person.first_name %></p>
+    <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @person.first_name %> <%= @person.last_name %> was missing from <%= @person.missing_date %>;url=<%= url_for([@person, {only_path: false}]) %>', '_blank','width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
+    <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for([@person, { only_path: false}]) %>', '_blank','width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
+    <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@person, { only_path: false}]) %>', '_blank','width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
+
+  </div>
+  <hr>
+
+</div>
+
+
+
