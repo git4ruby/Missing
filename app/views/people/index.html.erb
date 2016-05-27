@@ -1,1 +1,21 @@
-<h1> test </h1>
+<h1 id="page_title">Missing People List</h1>
+
+<div id="posts_wrapper" class="skinny_wrapper">
+
+  <% @people.each do |person| %>
+      <div class="post">
+        <p class="date">Missing Date : <%= person.missing_date.strftime('%A, %B %d') %></p>
+        <h2><a href="#"><%= link_to person.first_name, person %></a></h2>
+        <hr>
+      </div>
+
+
+  <% end %>
+  </div>
+
+    <div class="pagination">
+      <span class="previous_page disabled">Previous</span>
+      <em class="current">1</em>
+      <a rel="next" href="#">2</a>
+      <a class="next_page" href="#">Next</a>
+    </div>

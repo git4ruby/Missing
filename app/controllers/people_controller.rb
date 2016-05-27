@@ -2,6 +2,7 @@ class PeopleController < ApplicationController
   before_action :find_person, only: [:show, :edit, :update, :destroy]
 
   def index
+    @people = Person.all.order("missing_date desc")
 
   end
 
