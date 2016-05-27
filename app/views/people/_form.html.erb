@@ -1,0 +1,87 @@
+<%= form_for @person do |f| %>
+    <% if @person.errors.any? %>
+        <h2><%= pluralize(@person.errors.count, "error") %> prevented this person details from saving:</h2>
+        <ul>
+          <% @person.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+              <% end %>
+        </ul>
+        <% end %>
+
+
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :nationality %><br>
+    <%= f.text_field :nationality %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :gender %><br>
+    <%= f.radio_button :gender, 'Male' %> Male<br />
+    <%= f.radio_button :gender, 'Female' %> Female<br />
+
+    <br>
+    <br>
+
+
+
+    <%= f.label :description, "Write person details here" %><br>
+    <%= f.text_area :description %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :missing_date %><br>
+
+
+    <%= f.datetime_select :missing_date, :ampm => true %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :missing_location %><br>
+    <%= f.text_field :missing_location %>
+
+    <br>
+    <br>
+
+
+    <%= f.label :updates %><br>
+    <%= f.text_area :updates %>
+
+    <br>
+    <br>
+
+    <%= f.submit %>
+
+<% end %>

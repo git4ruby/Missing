@@ -1,0 +1,14 @@
+<%= @person.first_name %><br>
+<%= @person.last_name %><br>
+<%= @person.age %><br>
+<%= @person.nationality %><br>
+<%= @person.gender%><br>
+<%= @person.contact %><br>
+<%= @person.height %><br>
+<%= @person.description %><br>
+<%= @person.missing_date %><br>
+<%= @person.missing_location %><br>
+<%= @person.updates %><br><br>
+
+<%= link_to "Edit", edit_person_path(@person) %>
+<%= link_to "Delete", person_path(@person), method: :delete, data: { confirm: "Are you sure you want to delete this person details?"} %>
