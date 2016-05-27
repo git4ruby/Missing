@@ -60,6 +60,11 @@
   </div>
 
   <hr>
+
+  <%= link_to "Edit", edit_person_path(@person) %>
+  <%= link_to "Delete", person_path(@person), method: :delete, data: {confirm: "Are you sure, You want to delete this person details?"} %>
+
+  <hr>
   <div id="share_box">
     <p>Share <%= @person.first_name %></p>
     <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @person.first_name %> <%= @person.last_name %> was missing from <%= @person.missing_date %>;url=<%= url_for([@person, {only_path: false}]) %>', '_blank','width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
