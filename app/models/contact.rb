@@ -10,18 +10,10 @@ class Contact < MailForm::Base
     {
       :subject => "Contact Form for Missing Person",
       :to => "email.swar@gmail.com",
-      :from => %("#{name}" <#{email}>)
+      :from => %("#{name}" <#{email}>),
+      :attachments => %(<#{images}>)
 
     }
   end
-
-
-
-  def admin(contact)
-    @contact= contact
-    if contact.file
-      attachment_name = contact.file.original_filename
-      attachments[attachment_name] = contact.file.read
-    end
-  end
+  
 end
