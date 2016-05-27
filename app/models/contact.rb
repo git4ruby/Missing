@@ -14,4 +14,14 @@ class Contact < MailForm::Base
 
     }
   end
+
+
+
+  def admin(contact)
+    @contact= contact
+    if contact.file
+      attachment_name = contact.file.original_filename
+      attachments[attachment_name] = contact.file.read
+    end
+  end
 end
