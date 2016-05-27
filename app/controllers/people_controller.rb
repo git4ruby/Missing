@@ -32,7 +32,7 @@ class PeopleController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def destroy
