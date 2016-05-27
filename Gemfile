@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'country-select'
 gem 'font-awesome-sass'
+gem 'friendly_id', '~> 5.1'
 
 
 group :development, :test do

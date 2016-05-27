@@ -43,11 +43,11 @@ class PeopleController < ApplicationController
   private
 
   def person_params
-    params.require(:person).permit(:first_name, :last_name, :age, :nationality, :contact, :height, :gender, :description, :missing_date, :missing_location, :updates)
+    params.require(:person).permit(:first_name, :last_name, :age, :nationality, :contact, :height, :gender, :description, :missing_date, :missing_location, :updates, :slug)
   end
 
   def find_person
-    @person = Person.find(params[:id])
+    @person = Person.friendly.find(params[:id])
   end
 
 end
