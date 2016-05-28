@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_action :find_person, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @people = Person.all.order("missing_date desc").paginate(page: params[:page], per_page: 2)
