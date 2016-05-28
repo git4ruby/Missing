@@ -58,15 +58,17 @@
         <td><%= @person.updates %></td></tr>
       <tr>
 
-
+        <br>
     </table>
-
   </div>
+  <% if user_signed_in? %>
 
+      <div id="admin_links">
 
   <%= link_to "Edit", edit_person_path(@person) %>
   <%= link_to "Delete", person_path(@person), method: :delete, data: {confirm: "Are you sure, You want to delete this person details?"} %>
-
+</div>
+  <% end %>
   <hr>
   <div id="share_box">
     <p>Share <%= @person.first_name %></p>
